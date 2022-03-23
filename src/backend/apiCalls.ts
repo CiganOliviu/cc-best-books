@@ -54,9 +54,19 @@ export const useCustomFetchNationalities = () => {
 export const useCustomFetchStyleComponents = () => {
     const {
         error: serverErrorStyleComponents,
-        data: apiDataErrorStyleComponents,
+        data: apiDataStyleComponents,
         isLoading: isLoadingStyleComponents,
     } = useCustomFetch(requestUrls.fetchStyleComponents);
 
-    return { serverErrorStyleComponents, apiDataErrorStyleComponents, isLoadingStyleComponents };
+    return { serverErrorStyleComponents, apiDataStyleComponents, isLoadingStyleComponents };
+};
+
+export const useCustomFetchAppLayout = () => {
+    const {
+        error: serverErrorAppLayout,
+        data: apiDataAppLayout,
+        isLoading: isLoadingAppLayout,
+    } = useCustomFetch(requestUrls.fetchAppLayout);
+
+    return { serverErrorAppLayout, apiDataAppLayout, isLoadingAppLayout };
 };

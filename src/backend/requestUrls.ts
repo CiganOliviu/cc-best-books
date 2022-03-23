@@ -6,5 +6,6 @@ export const requestUrls = {
     fetchAuthors: `${backendUrl}/authors/`,
     fetchBooks: `${backendUrl}/books/`,
     fetchNationalities: `${backendUrl}/nationalities/`,
-    fetchStyleComponents: `${backendUrl}/style-components/`
+    fetchStyleComponents: `${backendUrl}/style-components/`,
+    fetchAppLayout: `${backendUrl}/app-layout/`
 }
