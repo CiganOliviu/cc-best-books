@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { GlobalStyles } from './App.style';
-import AppLayout from './components/AppLayout/AppLayout';
-import Authors from './components/Authors/Authors';
-import Books from './components/Books/Books';
-import Categories from './components/Categories/Categories';
-import Nationalities from './components/Nationalities/Nationalities';
-import Schemas from './components/Schemas/Schemas';
-import StyleComponents from './components/StyleComponents/StyleComponents';
+import AppLayout from './pages/AppLayout/AppLayout';
+import Authors from './pages/Authors/Authors';
+import Books from './pages/Books/Books';
+import Categories from './pages/Categories/Categories';
+import Nationalities from './pages/Nationalities/Nationalities';
+import Schemas from './pages/Schemas/Schemas';
+import StyleComponents from './pages/StyleComponents/StyleComponents';
 import { appPagesRouting } from './helpers/appPagesRouting';
 
 const App = () => {
