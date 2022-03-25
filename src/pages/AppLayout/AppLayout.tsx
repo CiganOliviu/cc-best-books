@@ -14,7 +14,7 @@ const AppLayout = () => {
 
     useEffect(() => {
         if (serverErrorAppLayout) { 
-            throw new Error("Error when fetching schemas from backend!");
+            throw new Error("Error when fetching AppLayout from backend!");
         }
     }, [serverErrorAppLayout]);
 

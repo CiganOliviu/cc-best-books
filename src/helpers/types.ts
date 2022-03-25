@@ -21,3 +21,16 @@ export type AuthorsType = {
     occupation: string;
     website: string;
 }
+
+export type BooksType = {
+    _id: string;
+    author: string;
+    title: string;
+    description: string;
+    mark: number;
+    cover: string;
+    current_market_price: number;
+    pages: number;
+    category: string;
+    owned: boolean;
+}

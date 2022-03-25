@@ -25,7 +25,7 @@ const Authors = () => {
             authors.map((data: AuthorsType) => {
                 return (
                     <div key={ data.last_name }>
-                        <h1>{ data.first_name } { data.last_name }</h1> 
+                        <h1>{ data.first_name } { data.last_name }</h1>
                     </div>
                 )
             })
