@@ -10,3 +10,14 @@ export type AppLayoutType = {
     target_page: string;
     style: string;
 }
+
+export type AuthorsType = {
+    _id: string;
+    profile_picture: string;
+    first_name: string;
+    last_name: string;
+    age: number;
+    nationality: string;
+    occupation: string;
+    website: string;
+}
