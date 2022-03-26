@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useCustomFetchSchemas } from '../../backend/apiCalls';
 import { SchemasType } from '../../helpers/types';
 import { isDataFetchedValid } from '../../helpers/validators';
+import { SchemasStyle, TableTitle, TitleContainer } from './Schemas.style';
 
 const Schemas = () => {
     const [schemas, setSchemas] = useState<SchemasType[]>([]);
@@ -28,17 +29,17 @@ const Schemas = () => {
     };
 
     return(
-        <div>
+        <SchemasStyle>
             {
                 schemas.map((data: SchemasType) => {
                     return (
-                        <div key={ data.name }>
-                            <a href={ data.route } >{ data.name }</a> 
-                        </div>
+                        <TitleContainer key={ data.name }>
+                            <TableTitle href={ data.route } >{ data.name }</TableTitle> 
+                        </TitleContainer>
                     );
                 })
             }
-        </div>
+        </SchemasStyle>
     )
 }
 
