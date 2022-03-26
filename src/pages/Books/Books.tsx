@@ -19,14 +19,6 @@ const Books = () => {
         }
     }, [serverErrorBooks]);
 
-    if (Object.keys(apiDataBooks).length === 0) {
-        return (
-            <div>
-                There is no data to show
-            </div>
-        )
-    }
-
     return (
         <div>
         {

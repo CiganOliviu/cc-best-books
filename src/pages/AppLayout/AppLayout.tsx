@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useCustomFetchAppLayout } from '../../backend/apiCalls';
 import { AppLayoutType } from '../../helpers/types';
+import { isDataFetchedValid } from '../../helpers/validators';
 
 const AppLayout = () => {
-    const [appLayout, setAppLayout] = useState([]);
+    const [appLayout, setAppLayout] = useState<AppLayoutType[]>([]);
     const { apiDataAppLayout, serverErrorAppLayout } = useCustomFetchAppLayout();
 
     useEffect(() => {
@@ -17,6 +18,14 @@ const AppLayout = () => {
             throw new Error("Error when fetching AppLayout from backend!");
         }
     }, [serverErrorAppLayout]);
+
+    if (isDataFetchedValid(appLayout)) {
+        return (
+            <div>
+                There isn't any data to show
+            </div>
+        );
+    }
 
     return(
         <div>

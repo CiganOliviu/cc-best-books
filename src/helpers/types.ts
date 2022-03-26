@@ -49,3 +49,5 @@ export type StyleComponentsType = {
     _id: string;
     app_theme: string;
 }
+
+export type GeneralBackendType = SchemasType | AppLayoutType | AuthorsType | BooksType | CategoriesType | NationalitiesType | StyleComponentsType; 
