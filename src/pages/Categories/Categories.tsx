@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useCustomFetchCategories } from '../../backend/apiCalls';
 import { CategoriesType } from '../../helpers/types';
+import { isDataFetchedValid } from '../../helpers/validators';
 
 const Categories = () => {
-
-    const [categories, setCategories] = useState([]);
+    const [categories, setCategories] = useState<CategoriesType[]>([]);
     const { apiDataCategories, serverErrorCategories } = useCustomFetchCategories();
 
     useEffect(() => {
@@ -19,13 +19,13 @@ const Categories = () => {
         }
     }, [serverErrorCategories]);
 
-    if (Object.keys(apiDataCategories).length === 0) {
+    if (isDataFetchedValid(categories)) {
         return (
             <div>
-                There is no data to show
+                There isn't any data to show
             </div>
-        )
-    }
+        );
+    };
     return (
         <div>
             {
