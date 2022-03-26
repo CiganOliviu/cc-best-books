@@ -25,7 +25,7 @@ const AppLayout = () => {
                 There isn't any data to show
             </div>
         );
-    }
+    };
 
     return(
         <div>
