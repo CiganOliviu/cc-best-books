@@ -60,7 +60,7 @@ const Authors = () => {
                         <p>{ data.website }</p>                        
                         <div>&nbsp;</div>
                     </div>
-                )
+                );
             })
         }
         </div>

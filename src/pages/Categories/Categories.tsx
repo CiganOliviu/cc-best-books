@@ -26,6 +26,7 @@ const Categories = () => {
             </div>
         );
     };
+
     return (
         <div>
             {
@@ -34,7 +35,7 @@ const Categories = () => {
                         <div key={ data.name }>
                             { data.name }
                         </div>
-                    )
+                    );
                 })
             }
         </div>

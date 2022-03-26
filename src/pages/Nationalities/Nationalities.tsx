@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useCustomFetchNationalities } from '../../backend/apiCalls';
 import { NationalitiesType } from '../../helpers/types';
+import { isDataFetchedValid } from '../../helpers/validators';
 
 const Nationalities = () => {
 
-    const [nationalities, setNationalities] = useState([]);
+    const [nationalities, setNationalities] = useState<NationalitiesType[]>([]);
     const { apiDataNationalities, serverErrorNationalities } = useCustomFetchNationalities();
 
     useEffect(() => {
@@ -19,13 +20,14 @@ const Nationalities = () => {
         }
     }, [serverErrorNationalities]);
 
-    if (Object.keys(apiDataNationalities).length === 0) {
+    if (isDataFetchedValid(nationalities)) {
         return (
             <div>
-                There is no data to show
+                There isn't any data to show
             </div>
-        )
-    }
+        );
+    };
+
     return (
         <div>
             {
@@ -34,7 +36,7 @@ const Nationalities = () => {
                         <div key={ data.name }>
                             { data.name }
                         </div>
-                    )
+                    );
                 })
             }
         </div>

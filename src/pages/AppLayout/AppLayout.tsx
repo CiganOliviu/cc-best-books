@@ -36,7 +36,7 @@ const AppLayout = () => {
                             <h1>{ data.target_page }</h1>
                             <p>{ data.style } </p> 
                         </div>
-                    )
+                    );
                 })
             }
         </div>
