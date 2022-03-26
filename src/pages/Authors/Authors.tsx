@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useCustomFetchAuthors, useCustomFetchNationalities } from '../../backend/apiCalls';
 import { AuthorsType, NationalitiesType } from '../../helpers/types';
+import { isDataFetchedValid } from '../../helpers/validators';
 
 const Authors = () => {
 
-    const [authors, setAuthors] = useState([]);
-    const [nationalities, setNationalities] = useState([]);
+    const [authors, setAuthors] = useState<AuthorsType[]>([]);
+    const [nationalities, setNationalities] = useState<NationalitiesType[]>([]);
 
     const { apiDataAuthors, serverErrorAuthors } = useCustomFetchAuthors();
     const { apiDataNationalities, serverErrorNationalities } = useCustomFetchNationalities();
@@ -36,6 +37,14 @@ const Authors = () => {
         });
 
         return result;
+    };
+
+    if (isDataFetchedValid(authors) && isDataFetchedValid(nationalities)) {
+        return (
+            <div>
+                There isn't any data to show
+            </div>
+        );
     };
 
     return (
