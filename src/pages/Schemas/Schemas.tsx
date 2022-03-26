@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useCustomFetchSchemas } from '../../backend/apiCalls';
 import { SchemasType } from '../../helpers/types';
+import { isDataFetchedValid } from '../../helpers/validators';
 
 const Schemas = () => {
-
-    const [schemas, setSchemas] = useState([]);
+    const [schemas, setSchemas] = useState<SchemasType[]>([]);
     const { apiDataSchemas, serverErrorSchemas } = useCustomFetchSchemas();
 
     useEffect(() => {
@@ -19,6 +19,14 @@ const Schemas = () => {
         }
     }, [serverErrorSchemas]);
 
+    if (isDataFetchedValid(schemas)) {
+        return (
+            <div>
+                There isn't any data to show
+            </div>
+        );
+    };
+
     return(
         <div>
             {
@@ -27,7 +35,7 @@ const Schemas = () => {
                         <div key={ data.name }>
                             <a href={ data.route } >{ data.name }</a> 
                         </div>
-                    )
+                    );
                 })
             }
         </div>

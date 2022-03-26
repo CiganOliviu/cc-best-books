@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useCustomFetchStyleComponents } from '../../backend/apiCalls';
 import { StyleComponentsType } from '../../helpers/types';
+import { isDataFetchedValid } from '../../helpers/validators';
 
 const StyleComponents = () => {
-
-    const [styleComponents, setStyleComponents] = useState([]);
+    const [styleComponents, setStyleComponents] = useState<StyleComponentsType[]>([]);
     const { apiDataStyleComponents, serverErrorStyleComponents } = useCustomFetchStyleComponents();
 
     useEffect(() => {
@@ -19,13 +19,15 @@ const StyleComponents = () => {
         }
     }, [serverErrorStyleComponents]);
 
-    if (Object.keys(apiDataStyleComponents).length === 0) {
+
+    if (isDataFetchedValid(styleComponents)) {
         return (
             <div>
-                There is no data to show
+                There isn't any data to show
             </div>
-        )
-    }
+        );
+    };
+
     return (
         <div>
             {
@@ -34,7 +36,7 @@ const StyleComponents = () => {
                         <div key={ data.app_theme }>
                             { data.app_theme }
                         </div>
-                    )
+                    );
                 })
             }
         </div>
