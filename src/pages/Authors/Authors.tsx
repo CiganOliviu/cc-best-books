@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useCustomFetchAuthors, useCustomFetchNationalities } from '../../backend/apiCalls';
 import { AuthorsType, NationalitiesType } from '../../helpers/types';
 
