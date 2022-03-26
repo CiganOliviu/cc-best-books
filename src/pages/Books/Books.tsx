@@ -17,7 +17,15 @@ const Books = () => {
         if (serverErrorBooks) {
             throw new Error("Error when fetching Books from backend");
         }
-    });
+    }, [serverErrorBooks]);
+
+    if (Object.keys(apiDataBooks).length === 0) {
+        return (
+            <div>
+                There is no data to show
+            </div>
+        )
+    }
 
     return (
         <div>
