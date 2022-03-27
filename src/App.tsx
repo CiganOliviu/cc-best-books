@@ -8,6 +8,7 @@ import Nationalities from './pages/Nationalities/Nationalities';
 import Schemas from './pages/Schemas/Schemas';
 import StyleComponents from './pages/StyleComponents/StyleComponents';
 import { appPagesRouting } from './helpers/appPagesRouting';
+import AuthorsDetailPage from './pages/Authors/AuthorsDetalPage';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path={ appPagesRouting.SchemasPage } element={ <Schemas/> } />
           <Route path={ appPagesRouting.AppLayouPage } element={ <AppLayout/> } />
           <Route path={ appPagesRouting.AuthorsPage } element={ <Authors /> } />
+          <Route path={ appPagesRouting.AuthorsDetailPage } element={ <AuthorsDetailPage/> } ></Route>
           <Route path={ appPagesRouting.BooksPage } element={ <Books /> } />
           <Route path={ appPagesRouting.CategoriesPage } element={ <Categories /> } />
           <Route path={ appPagesRouting.NationalitiesPage } element={ <Nationalities /> } />

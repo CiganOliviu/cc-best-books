@@ -1,9 +1,15 @@
 export const appPagesRouting = { 
     SchemasPage: '/',
     AppLayouPage: 'app_layout/',
+    AppLayoutDetailPage: 'app_layout/:id',
     AuthorsPage: 'authors/',
+    AuthorsDetailPage: 'authors/:id',
     BooksPage: 'books/',
+    BooksDetailPage: 'books/:id',
     CategoriesPage: 'categories/',
+    CategoriesDetailPage: 'categories/:id',
     NationalitiesPage: 'nationalities/',
+    NationalitiesDetailPage: 'nationalities/:id',
     StyleComponentsPage: 'style_components/',
+    StyleComponentsDetailPage: 'style_components/:id',
 }

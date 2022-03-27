@@ -25,18 +25,6 @@ const Authors = () => {
             throw new Error("Error fetching data from AuthorsModel")
         }
     }, [serverErrorAuthors, serverErrorNationalities]);
-    
-    const getNationality = (authorId: string): string => {
-
-        let result = '';
-        nationalities.forEach((nationality: NationalitiesType) => {
-            if (nationality._id === authorId[0]) {
-                result = nationality.name
-            }
-        });
-
-        return result;
-    };
 
     if (isDataFetchedValid(authors) && isDataFetchedValid(nationalities)) {
         return (
@@ -52,13 +40,7 @@ const Authors = () => {
             authors.map((data: AuthorsType) => {
                 return (
                     <div key={ data.last_name }>
-                        <p>{ data.first_name }</p>
-                        <p>{ data.last_name }</p>
-                        <p>{ data.age }</p>
-                        <p>{ getNationality(data.nationality) } </p>
-                        <p>{ data.occupation }</p>
-                        <p>{ data.website }</p>                        
-                        <div>&nbsp;</div>
+                        <p>{ data.first_name } { data.last_name }</p>                      
                     </div>
                 );
             })

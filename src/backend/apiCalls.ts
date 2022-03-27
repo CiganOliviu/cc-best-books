@@ -31,6 +31,16 @@ export const useCustomFetchAuthors = () => {
     return { isLoadingAuthors, serverErrorAuthors, apiDataAuthors};
 };
 
+export const useCustomFetchAuthor = (id: string | undefined) => {
+    const {
+        error: serverErrorAuthor,
+        data: apiDataAuthor,
+        isLoading: isLoadingAuthor,
+    } = useCustomFetch(`${requestUrls.fetchAuthors}${id}`);
+
+    return { isLoadingAuthor, serverErrorAuthor, apiDataAuthor }; 
+};
+
 export const useCustomFetchBooks = () => {
     const {
         error: serverErrorBooks,
