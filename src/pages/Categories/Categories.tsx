@@ -3,7 +3,7 @@ import { useCustomFetchCategories } from '../../backend/apiCalls';
 import { CategoriesType } from '../../helpers/types';
 import { isDataFetchedValid } from '../../helpers/validators';
 
-const Categories = () => {
+const Categories: React.FC = () => {
     const [categories, setCategories] = useState<CategoriesType[]>([]);
     const { apiDataCategories, serverErrorCategories } = useCustomFetchCategories();
 

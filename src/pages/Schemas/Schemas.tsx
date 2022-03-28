@@ -4,7 +4,7 @@ import { SchemasType } from '../../helpers/types';
 import { isDataFetchedValid } from '../../helpers/validators';
 import { SchemasStyle, TableTitle, TitleContainer } from './Schemas.style';
 
-const Schemas = () => {
+const Schemas: React.FC = () => {
     const [schemas, setSchemas] = useState<SchemasType[]>([]);
     const { apiDataSchemas, serverErrorSchemas } = useCustomFetchSchemas();
 

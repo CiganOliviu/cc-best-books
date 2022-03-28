@@ -4,7 +4,7 @@ import { AuthorsType, NationalitiesType } from '../../helpers/types';
 import { isDataFetchedValid } from '../../helpers/validators';
 import { TableTitle } from '../Schemas/Schemas.style';
 
-const Authors = () => {
+const Authors: React.FC = () => {
     const [authors, setAuthors] = useState<AuthorsType[]>([]);
     const [nationalities, setNationalities] = useState<NationalitiesType[]>([]);
 

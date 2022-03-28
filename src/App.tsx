@@ -10,7 +10,7 @@ import StyleComponents from './pages/StyleComponents/StyleComponents';
 import { appPagesRouting } from './helpers/appPagesRouting';
 import AuthorsDetailPage from './pages/Authors/AuthorsDetalPage';
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <div>
       <GlobalStyles />

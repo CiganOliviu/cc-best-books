@@ -3,7 +3,7 @@ import { useCustomFetchBooks } from '../../backend/apiCalls';
 import { BooksType } from '../../helpers/types';
 import { isDataFetchedValid } from '../../helpers/validators';
 
-const Books = () => {
+const Books: React.FC = () => {
     const [books, setBooks] = useState<BooksType[]>([]);
     const { apiDataBooks, serverErrorBooks } = useCustomFetchBooks();
 

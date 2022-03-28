@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useCustomFetchAuthor, useCustomFetchNationalities } from '../../backend/apiCalls';
 import { AuthorsType, NationalitiesType } from '../../helpers/types';
 
-const AuthorsDetailPage = () => {
+const AuthorsDetailPage: React.FC = () => {
     
     const [author, setAuthor] = useState<AuthorsType>();
     const [nationalities, setNationalities] = useState<NationalitiesType[]>([]);

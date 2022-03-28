@@ -3,7 +3,7 @@ import { useCustomFetchAppLayout } from '../../backend/apiCalls';
 import { AppLayoutType } from '../../helpers/types';
 import { isDataFetchedValid } from '../../helpers/validators';
 
-const AppLayout = () => {
+const AppLayout: React.FC = () => {
     const [appLayout, setAppLayout] = useState<AppLayoutType[]>([]);
     const { apiDataAppLayout, serverErrorAppLayout } = useCustomFetchAppLayout();
 

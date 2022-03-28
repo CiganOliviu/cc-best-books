@@ -3,7 +3,7 @@ import { useCustomFetchStyleComponents } from '../../backend/apiCalls';
 import { StyleComponentsType } from '../../helpers/types';
 import { isDataFetchedValid } from '../../helpers/validators';
 
-const StyleComponents = () => {
+const StyleComponents: React.FC = () => {
     const [styleComponents, setStyleComponents] = useState<StyleComponentsType[]>([]);
     const { apiDataStyleComponents, serverErrorStyleComponents } = useCustomFetchStyleComponents();
 
