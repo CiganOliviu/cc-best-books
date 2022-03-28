@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useCustomFetchAuthors, useCustomFetchNationalities } from '../../backend/apiCalls';
 import { AuthorsType, NationalitiesType } from '../../helpers/types';
 import { isDataFetchedValid } from '../../helpers/validators';
