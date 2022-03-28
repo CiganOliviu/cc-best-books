@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useCustomFetchAuthors, useCustomFetchNationalities } from '../../backend/apiCalls';
 import { AuthorsType, NationalitiesType } from '../../helpers/types';
 import { isDataFetchedValid } from '../../helpers/validators';
@@ -40,7 +41,7 @@ const Authors = () => {
             authors.map((data: AuthorsType) => {
                 return (
                     <div key={ data.last_name }>
-                        <p>{ data.first_name } { data.last_name }</p>                      
+                        <Link to={ data._id }>{ data.first_name } { data.last_name }</Link>                      
                     </div>
                 );
             })
