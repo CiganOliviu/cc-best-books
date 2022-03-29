@@ -3,6 +3,7 @@ import { useCustomFetchAuthors, useCustomFetchNationalities } from '../../backen
 import { AuthorsType, NationalitiesType } from '../../helpers/types';
 import { isDataFetchedValid } from '../../helpers/validators';
 import { TableTitle } from '../Schemas/Schemas.style';
+import { useNavigate } from 'react-router-dom';
 
 const Authors: React.FC = () => {
     const [authors, setAuthors] = useState<AuthorsType[]>([]);
@@ -10,6 +11,8 @@ const Authors: React.FC = () => {
 
     const { apiDataAuthors, serverErrorAuthors } = useCustomFetchAuthors();
     const { apiDataNationalities, serverErrorNationalities } = useCustomFetchNationalities();
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (apiDataAuthors) {
@@ -41,7 +44,7 @@ const Authors: React.FC = () => {
             authors.map((data: AuthorsType) => {
                 return (
                     <div key={ data.last_name }>
-                        <TableTitle href={ data._id }>{ data.first_name } { data.last_name }</TableTitle>                      
+                        <TableTitle href={ data._id } onClick={() => navigate(data._id)}>{ data.first_name } { data.last_name }</TableTitle>                      
                     </div>
                 );
             })
