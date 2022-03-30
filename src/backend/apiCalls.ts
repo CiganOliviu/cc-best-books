@@ -3,12 +3,12 @@ import { requestUrls } from "./requestUrls";
 
 export const useCustomFetchSchemas = () => {
     const {
-        error: serverErrorSchemas,
-        data: apiDataSchemas,
-        isLoading: isLoadingSchemas,
+        error: serverError,
+        data: apiData,
+        isLoading: isLoading,
     } = useCustomFetch(requestUrls.fetchSchemas);
 
-    return { isLoadingSchemas, serverErrorSchemas, apiDataSchemas };
+    return { isLoading, serverError, apiData };
 };
 
 export const useCustomFetchCategories = () => {

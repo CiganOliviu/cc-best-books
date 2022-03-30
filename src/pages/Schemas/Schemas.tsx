@@ -6,19 +6,19 @@ import { SchemasStyle, TableTitle, TitleContainer } from './Schemas.style';
 
 const Schemas: React.FC = () => {
     const [schemas, setSchemas] = useState<SchemasType[]>([]);
-    const { apiDataSchemas, serverErrorSchemas } = useCustomFetchSchemas();
+    const { apiData, serverError } = useCustomFetchSchemas();
 
     useEffect(() => {
-        if (apiDataSchemas) {
-            setSchemas(apiDataSchemas);
+        if (apiData) {
+            setSchemas(apiData);
         }
-    }, [apiDataSchemas]);
+    }, [apiData]);
 
     useEffect(() => {
-        if (serverErrorSchemas) { 
+        if (serverError) { 
             throw new Error("Error when fetching schemas from backend!");
         }
-    }, [serverErrorSchemas]);
+    }, [serverError]);
 
     if (isDataFetchedValid(schemas)) {
         return (
