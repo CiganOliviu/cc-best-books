@@ -7,10 +7,8 @@ import { useNavigate } from 'react-router-dom';
 
 const Authors: React.FC = () => {
     const [authors, setAuthors] = useState<AuthorsType[]>([]);
-    const [nationalities, setNationalities] = useState<NationalitiesType[]>([]);
 
     const { apiDataAuthors, serverErrorAuthors } = useCustomFetchAuthors();
-    const { apiDataNationalities, serverErrorNationalities } = useCustomFetchNationalities();
 
     const navigate = useNavigate();
 
@@ -18,19 +16,15 @@ const Authors: React.FC = () => {
         if (apiDataAuthors) {
             setAuthors(apiDataAuthors);
         }
-
-        if (apiDataNationalities) {
-            setNationalities(apiDataNationalities);
-        }
-    }, [apiDataAuthors, apiDataNationalities]);
+    }, [apiDataAuthors]);
 
     useEffect(() => {
-        if (serverErrorAuthors || serverErrorNationalities) {
+        if (serverErrorAuthors) {
             throw new Error("Error fetching data from AuthorsModel")
         }
-    }, [serverErrorAuthors, serverErrorNationalities]);
+    }, [serverErrorAuthors]);
 
-    if (isDataFetchedValid(authors) && isDataFetchedValid(nationalities)) {
+    if (isDataFetchedValid(authors)) {
         return (
             <div>
                 There isn't any data to show
