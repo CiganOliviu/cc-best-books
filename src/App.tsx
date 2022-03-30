@@ -9,6 +9,8 @@ import Schemas from './pages/Schemas/Schemas';
 import StyleComponents from './pages/StyleComponents/StyleComponents';
 import { appPagesRouting } from './helpers/appPagesRouting';
 import AuthorsDetailPage from './pages/Authors/AuthorsDetalPage';
+import ModularPage from './pages/ModularPage/ModularPage';
+import { useCustomFetchSchemas } from './backend/apiCalls';
 
 const App: React.FC = () => {
   return (
@@ -24,6 +26,7 @@ const App: React.FC = () => {
           <Route path={ appPagesRouting.CategoriesPage } element={ <Categories /> } />
           <Route path={ appPagesRouting.NationalitiesPage } element={ <Nationalities /> } />
           <Route path={ appPagesRouting.StyleComponentsPage } element={ <StyleComponents /> } />
+          <Route path='modular-page/' element={ <ModularPage useCustomFetch={ useCustomFetchSchemas } /> } />
         </Routes>
       </BrowserRouter>
     </div>

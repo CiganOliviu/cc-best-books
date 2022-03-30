@@ -52,6 +52,12 @@ export type StyleComponentsType = {
 
 export type GeneralBackendType = SchemasType | AppLayoutType | AuthorsType | BooksType | CategoriesType | NationalitiesType | StyleComponentsType; 
 
+export type FetchResponseType = {
+    apiData: null;
+    serverError: null;
+    isLoading: boolean;
+}
+
 export type ModularPageType = {
-    pageType: string;
+    useCustomFetch: () => FetchResponseType;
 }

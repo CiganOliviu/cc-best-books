@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
+import { FetchResponseType } from '../helpers/types';
 
-const useCustomFetch = (url: RequestInfo) => {
+const useCustomFetch = (url: RequestInfo): FetchResponseType => {
     const [isLoading, setIsLoading] = useState(false);
-    const [data, setData] = useState(null);
-    const [error, setError] = useState(null);
+    const [apiData, setApiData] = useState(null);
+    const [serverError, setServerError] = useState(null);
 
     useEffect(() => {
         setIsLoading(true);
@@ -19,11 +20,11 @@ const useCustomFetch = (url: RequestInfo) => {
 
                 const data = await request.json();
 
-                setData(data);
+                setApiData(data);
                 setIsLoading(false);
 
             } catch (error: any) {
-                setError(error);
+                setServerError(error);
                 setIsLoading(false);
             }
         };
@@ -32,7 +33,7 @@ const useCustomFetch = (url: RequestInfo) => {
 
     }, [url]);
 
-    return { isLoading, data, error };
+    return { apiData, serverError, isLoading };
 };
 
 
