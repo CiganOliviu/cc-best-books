@@ -8,6 +8,7 @@ import AppLayoutContent from '../../components/AppLayoutContent/AppLayoutContent
 import BooksContent from '../../components/BooksContent/BooksContent';
 import CategoriesContent from '../../components/CategoriesContent/CategoriesContent';
 import StyleComponentsContent from '../../components/StyleComponentsContent/StyleComponentsContent';
+import { pageContentTypes } from '../../helpers/pageContentTypes';
 
 const ModularPage: React.FC<ModularPageType> = ({ useCustomFetch, pageContentType }) => {
     const [modularPageData, setModularPageData] = useState<GeneralBackendType[]>([]);
@@ -33,14 +34,14 @@ const ModularPage: React.FC<ModularPageType> = ({ useCustomFetch, pageContentTyp
         );
     };  
 
-    const result = (data: GeneralBackendType) => {
-        return pageContentType === 'Schemas' ? <SchemasContent asset={data} /> : 
-               pageContentType === 'Authors' ? <AuthorsContent asset={data}></AuthorsContent> :
-               pageContentType === 'Nationalities' ? <NationalitiesContent asset={data}></NationalitiesContent> :
-               pageContentType === 'AppLayout' ? <AppLayoutContent asset={data}></AppLayoutContent> :
-               pageContentType === 'Books' ? <BooksContent asset={data}></BooksContent> :
-               pageContentType === 'Categories' ? <CategoriesContent asset={data}></CategoriesContent> :
-               pageContentType === 'StyleComponents' ? <StyleComponentsContent asset={data}></StyleComponentsContent> :
+    const getContentByPageContentType = (data: GeneralBackendType) => {
+        return pageContentType === pageContentTypes.Schemas ? <SchemasContent asset={data} /> : 
+               pageContentType === pageContentTypes.Authors ? <AuthorsContent asset={data}></AuthorsContent> :
+               pageContentType === pageContentTypes.Nationalities ? <NationalitiesContent asset={data}></NationalitiesContent> :
+               pageContentType === pageContentTypes.AppLayout ? <AppLayoutContent asset={data}></AppLayoutContent> :
+               pageContentType === pageContentTypes.Books ? <BooksContent asset={data}></BooksContent> :
+               pageContentType === pageContentTypes.Categories ? <CategoriesContent asset={data}></CategoriesContent> :
+               pageContentType === pageContentTypes.StyleComponents ? <StyleComponentsContent asset={data}></StyleComponentsContent> :
                <></> 
     };
 
@@ -48,7 +49,7 @@ const ModularPage: React.FC<ModularPageType> = ({ useCustomFetch, pageContentTyp
         <div>
         {
             modularPageData.map((data: GeneralBackendType) => {
-                return result(data);
+                return getContentByPageContentType(data);
             })
         }
         </div>

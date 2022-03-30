@@ -78,5 +78,5 @@ export const useCustomFetchAppLayout = () => {
         isLoading,
     } = useCustomFetch(requestUrls.fetchAppLayout);
 
-    return { serverError, apiData, isLoading };
+    return { isLoading, serverError, apiData };
 };
