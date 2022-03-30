@@ -1,16 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AssetType } from '../../helpers/types';
+import { TableTitle } from '../../pages/Schemas/Schemas.style';
 
 const AuthorsContent: React.FC<AssetType> = (asset: any) => {
 
-    // { getNationality(author?.nationality) }
+    const navigate = useNavigate();
     return (
         <div>
-            <p>{ asset?.asset?.first_name }</p>
-            <p>{ asset?.asset?.last_name }</p>
-            <p>{ asset?.asset?.age }</p>
-            <p>{ asset?.asset?.occupation }</p>
-            <p>{ asset?.asset?.website }</p> 
+            <div key={ asset?.asset?.last_name }>
+                <TableTitle href={ asset?.asset?._id } onClick={() => navigate(asset?.asset?._id)}>{ asset?.asset?.first_name } { asset?.asset?.last_name }</TableTitle>                      
+            </div>
         </div>
     )
 };
