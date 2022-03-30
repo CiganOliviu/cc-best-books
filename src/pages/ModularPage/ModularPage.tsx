@@ -36,7 +36,6 @@ const ModularPage: React.FC<ModularPageType> = ({ useCustomFetch, pageContentTyp
                <></> 
     };
 
-    
     return (
         <div>
         {
