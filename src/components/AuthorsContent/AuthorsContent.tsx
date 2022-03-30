@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AssetType } from '../../helpers/types';
-import { TableTitle } from '../../pages/Schemas/Schemas.style';
+import { TableTitle } from '../SchemasContent/Schemas.style';
 
 const AuthorsContent: React.FC<AssetType> = (asset: any) => {
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { AssetType } from '../../helpers/types';
-import { TableTitle, TitleContainer } from '../../pages/Schemas/Schemas.style';
+import { TableTitle, TitleContainer } from './Schemas.style';
 
 const SchemasContent: React.FC<AssetType> = (asset: any) => {
     return (
