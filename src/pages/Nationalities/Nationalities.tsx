@@ -5,19 +5,19 @@ import { isDataFetchedValid } from '../../helpers/validators';
 
 const Nationalities: React.FC = () => {
     const [nationalities, setNationalities] = useState<NationalitiesType[]>([]);
-    const { apiDataNationalities, serverErrorNationalities } = useCustomFetchNationalities();
+    const { apiData, serverError } = useCustomFetchNationalities();
 
     useEffect(() => {
-        if (apiDataNationalities) {
-            setNationalities(apiDataNationalities);
+        if (apiData) {
+            setNationalities(apiData);
         }
-    }, [apiDataNationalities]);
+    }, [apiData]);
 
     useEffect(() => {
-        if (serverErrorNationalities) {
+        if (serverError) {
             throw new Error("Error when fetching Nationalities from backend");
         }
-    }, [serverErrorNationalities]);
+    }, [serverError]);
 
     if (isDataFetchedValid(nationalities)) {
         return (

@@ -5,19 +5,19 @@ import { isDataFetchedValid } from '../../helpers/validators';
 
 const StyleComponents: React.FC = () => {
     const [styleComponents, setStyleComponents] = useState<StyleComponentsType[]>([]);
-    const { apiDataStyleComponents, serverErrorStyleComponents } = useCustomFetchStyleComponents();
+    const { apiData, serverError } = useCustomFetchStyleComponents();
 
     useEffect(() => {
-        if (apiDataStyleComponents) {
-            setStyleComponents(apiDataStyleComponents);
+        if (apiData) {
+            setStyleComponents(apiData);
         }
-    }, [apiDataStyleComponents]);
+    }, [apiData]);
 
     useEffect(() => {
-        if (serverErrorStyleComponents) {
+        if (serverError) {
             throw new Error("Error when fetching StyleComponents from backend");
         }
-    }, [serverErrorStyleComponents]);
+    }, [serverError]);
 
 
     if (isDataFetchedValid(styleComponents)) {

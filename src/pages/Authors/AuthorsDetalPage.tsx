@@ -10,20 +10,20 @@ const AuthorsDetailPage: React.FC = () => {
 
     const { id } = useParams();
     const { apiDataAuthor, serverErrorAuthor } = useCustomFetchAuthor(id);
-    const { apiDataNationalities, serverErrorNationalities } = useCustomFetchNationalities();
+    const { apiData, serverError } = useCustomFetchNationalities();
 
     useEffect(() => {
         if (apiDataAuthor) {
             setAuthor(apiDataAuthor);
         }
-        if (apiDataNationalities) {
-            setNationalities(apiDataNationalities);
+        if (apiData) {
+            setNationalities(apiData);
         }
-    }, [apiDataAuthor, apiDataNationalities]);
+    }, [apiDataAuthor, apiData]);
 
     useEffect(() => {
-        if (serverErrorAuthor || serverErrorNationalities) {
-            throw new Error("Error fetching data from AuthorsModel");
+        if (serverErrorAuthor || serverError) {
+            throw new Error("Error fetching 3333333data from AuthorsModel");
         }
     });
 

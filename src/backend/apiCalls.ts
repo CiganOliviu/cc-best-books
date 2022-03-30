@@ -53,30 +53,30 @@ export const useCustomFetchBooks = () => {
 
 export const useCustomFetchNationalities = () => {
     const {
-        error: serverErrorNationalities,
-        data: apiDataNationalities,
-        isLoading: isLoadingNationalities,
+        error: serverError,
+        data: apiData,
+        isLoading: isLoading,
     } = useCustomFetch(requestUrls.fetchNationalities);
 
-    return { serverErrorNationalities, apiDataNationalities, isLoadingNationalities };
+    return { serverError, apiData, isLoading };
 };
 
 export const useCustomFetchStyleComponents = () => {
     const {
-        error: serverErrorStyleComponents,
-        data: apiDataStyleComponents,
-        isLoading: isLoadingStyleComponents,
+        error: serverError,
+        data: apiData,
+        isLoading: isLoading,
     } = useCustomFetch(requestUrls.fetchStyleComponents);
 
-    return { serverErrorStyleComponents, apiDataStyleComponents, isLoadingStyleComponents };
+    return { serverError, apiData, isLoading };
 };
 
 export const useCustomFetchAppLayout = () => {
     const {
-        error: serverErrorAppLayout,
-        data: apiDataAppLayout,
-        isLoading: isLoadingAppLayout,
+        error: serverError,
+        data: apiData,
+        isLoading: isLoading,
     } = useCustomFetch(requestUrls.fetchAppLayout);
 
-    return { serverErrorAppLayout, apiDataAppLayout, isLoadingAppLayout };
+    return { serverError, apiData, isLoading };
 };

@@ -5,19 +5,19 @@ import { isDataFetchedValid } from '../../helpers/validators';
 
 const AppLayout: React.FC = () => {
     const [appLayout, setAppLayout] = useState<AppLayoutType[]>([]);
-    const { apiDataAppLayout, serverErrorAppLayout } = useCustomFetchAppLayout();
+    const { apiData, serverError } = useCustomFetchAppLayout();
 
     useEffect(() => {
-        if (apiDataAppLayout) {
-            setAppLayout(apiDataAppLayout);
+        if (apiData) {
+            setAppLayout(apiData);
         }
-    }, [apiDataAppLayout]);
+    }, [apiData]);
 
     useEffect(() => {
-        if (serverErrorAppLayout) { 
+        if (serverError) { 
             throw new Error("Error when fetching AppLayout from backend!");
         }
-    }, [serverErrorAppLayout]);
+    }, [serverError]);
 
     if (isDataFetchedValid(appLayout)) {
         return (
