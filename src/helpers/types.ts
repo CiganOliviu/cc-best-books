@@ -51,3 +51,7 @@ export type StyleComponentsType = {
 }
 
 export type GeneralBackendType = SchemasType | AppLayoutType | AuthorsType | BooksType | CategoriesType | NationalitiesType | StyleComponentsType; 
+
+export type ModularPageType = {
+    pageType: string;
+}
