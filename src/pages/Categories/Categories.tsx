@@ -5,19 +5,19 @@ import { isDataFetchedValid } from '../../helpers/validators';
 
 const Categories: React.FC = () => {
     const [categories, setCategories] = useState<CategoriesType[]>([]);
-    const { apiDataCategories, serverErrorCategories } = useCustomFetchCategories();
+    const { apiData, serverError } = useCustomFetchCategories();
 
     useEffect(() => {
-        if (apiDataCategories) {
-            setCategories(apiDataCategories);
+        if (apiData) {
+            setCategories(apiData);
         }
-    }, [apiDataCategories]);
+    }, [apiData]);
 
     useEffect(() => {
-        if (serverErrorCategories) {
+        if (serverError) {
             throw new Error("Error when fetching Categories from backend");
         }
-    }, [serverErrorCategories]);
+    }, [serverError]);
 
     if (isDataFetchedValid(categories)) {
         return (

@@ -13,22 +13,22 @@ export const useCustomFetchSchemas = () => {
 
 export const useCustomFetchCategories = () => {
     const {
-        error: serverErrorCategories,
-        data: apiDataCategories,
-        isLoading: isLoadingCategories,
+        error: serverError,
+        data: apiData,
+        isLoading: isLoading,
     } = useCustomFetch(requestUrls.fetchCategories);
 
-    return { isLoadingCategories, serverErrorCategories, apiDataCategories };
+    return { isLoading, serverError, apiData };
 };
 
 export const useCustomFetchAuthors = () => {
     const {
-        error: serverErrorAuthors,
-        data: apiDataAuthors,
-        isLoading: isLoadingAuthors,
+        error: serverError,
+        data: apiData,
+        isLoading: isLoading,
     } = useCustomFetch(requestUrls.fetchAuthors);
 
-    return { isLoadingAuthors, serverErrorAuthors, apiDataAuthors};
+    return { isLoading, serverError, apiData };
 };
 
 export const useCustomFetchAuthor = (id: string | undefined) => {
@@ -43,12 +43,12 @@ export const useCustomFetchAuthor = (id: string | undefined) => {
 
 export const useCustomFetchBooks = () => {
     const {
-        error: serverErrorBooks,
-        data: apiDataBooks,
-        isLoading: isLoadingBooks,
+        error: serverError,
+        data: apiData,
+        isLoading: isLoading,
     } = useCustomFetch(requestUrls.fetchBooks);
 
-    return { isLoadingBooks, serverErrorBooks, apiDataBooks };
+    return { isLoading, serverError, apiData };
 };
 
 export const useCustomFetchNationalities = () => {

@@ -5,19 +5,19 @@ import { isDataFetchedValid } from '../../helpers/validators';
 
 const Books: React.FC = () => {
     const [books, setBooks] = useState<BooksType[]>([]);
-    const { apiDataBooks, serverErrorBooks } = useCustomFetchBooks();
+    const { apiData, serverError } = useCustomFetchBooks();
 
     useEffect(() => {
-        if (apiDataBooks) {
-            setBooks(apiDataBooks);
+        if (apiData) {
+            setBooks(apiData);
         }
-    }, [apiDataBooks]);
+    }, [apiData]);
 
     useEffect(() => {
-        if (serverErrorBooks) {
+        if (serverError) {
             throw new Error("Error when fetching Books from backend");
         }
-    }, [serverErrorBooks]);
+    }, [serverError]);
 
     if (isDataFetchedValid(books)) {
         return (

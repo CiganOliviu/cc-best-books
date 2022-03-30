@@ -8,21 +8,21 @@ import { useNavigate } from 'react-router-dom';
 const Authors: React.FC = () => {
     const [authors, setAuthors] = useState<AuthorsType[]>([]);
 
-    const { apiDataAuthors, serverErrorAuthors } = useCustomFetchAuthors();
+    const { apiData, serverError } = useCustomFetchAuthors();
 
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (apiDataAuthors) {
-            setAuthors(apiDataAuthors);
+        if (apiData) {
+            setAuthors(apiData);
         }
-    }, [apiDataAuthors]);
+    }, [apiData]);
 
     useEffect(() => {
-        if (serverErrorAuthors) {
+        if (serverError) {
             throw new Error("Error fetching data from AuthorsModel")
         }
-    }, [serverErrorAuthors]);
+    }, [serverError]);
 
     if (isDataFetchedValid(authors)) {
         return (
