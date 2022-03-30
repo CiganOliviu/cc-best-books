@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { GeneralBackendType, ModularPageType } from '../../helpers/types';
-import { isDataFetchedValid } from '../../helpers/validators';
+import { isDataFetchedValid } from '../../helpers/generalHelpers';
+import SchemasContent from '../../components/SchemasContent/SchemasContent';
+import AuthorsContent from '../../components/AuthorsContent/AuthorsContent';
 
-const ModularPage: React.FC<ModularPageType> = ({ useCustomFetch }) => {
+const ModularPage: React.FC<ModularPageType> = ({ useCustomFetch, pageContentType }) => {
     const [modularPageData, setModularPageData] = useState<GeneralBackendType[]>([]);
     const { apiData, serverError } = useCustomFetch();
     
@@ -26,11 +28,20 @@ const ModularPage: React.FC<ModularPageType> = ({ useCustomFetch }) => {
         );
     };  
 
-    console.log(modularPageData);
+    const result = (data: GeneralBackendType) => {
+        return pageContentType === 'Schemas' ? <SchemasContent asset={data} /> : 
+               pageContentType === 'Authors' ? <AuthorsContent asset={data}></AuthorsContent> :
+               <></> 
+    };
 
+    
     return (
         <div>
-
+        {
+            modularPageData.map((data: GeneralBackendType) => {
+                return result(data);
+            })
+        }
         </div>
     )
 }

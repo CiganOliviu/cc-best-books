@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useCustomFetchBooks } from '../../backend/apiCalls';
 import { BooksType } from '../../helpers/types';
-import { isDataFetchedValid } from '../../helpers/validators';
+import { isDataFetchedValid } from '../../helpers/generalHelpers';
 
 const Books: React.FC = () => {
     const [books, setBooks] = useState<BooksType[]>([]);

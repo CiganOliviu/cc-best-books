@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useCustomFetchNationalities } from '../../backend/apiCalls';
 import { NationalitiesType } from '../../helpers/types';
-import { isDataFetchedValid } from '../../helpers/validators';
+import { isDataFetchedValid } from '../../helpers/generalHelpers';
 
 const Nationalities: React.FC = () => {
     const [nationalities, setNationalities] = useState<NationalitiesType[]>([]);

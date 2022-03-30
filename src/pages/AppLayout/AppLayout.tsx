@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useCustomFetchAppLayout } from '../../backend/apiCalls';
 import { AppLayoutType } from '../../helpers/types';
-import { isDataFetchedValid } from '../../helpers/validators';
+import { isDataFetchedValid } from '../../helpers/generalHelpers';
 
 const AppLayout: React.FC = () => {
     const [appLayout, setAppLayout] = useState<AppLayoutType[]>([]);

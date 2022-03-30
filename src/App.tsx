@@ -5,12 +5,11 @@ import Authors from './pages/Authors/Authors';
 import Books from './pages/Books/Books';
 import Categories from './pages/Categories/Categories';
 import Nationalities from './pages/Nationalities/Nationalities';
-import Schemas from './pages/Schemas/Schemas';
 import StyleComponents from './pages/StyleComponents/StyleComponents';
 import { appPagesRouting } from './helpers/appPagesRouting';
 import AuthorsDetailPage from './pages/Authors/AuthorsDetalPage';
 import ModularPage from './pages/ModularPage/ModularPage';
-import { useCustomFetchSchemas } from './backend/apiCalls';
+import { useCustomFetchAuthors, useCustomFetchSchemas } from './backend/apiCalls';
 
 const App: React.FC = () => {
   return (
@@ -18,7 +17,8 @@ const App: React.FC = () => {
       <GlobalStyles />
       <BrowserRouter>
         <Routes>
-          <Route path={ appPagesRouting.SchemasPage } element={ <Schemas/> } />
+          <Route path={ appPagesRouting.SchemasPage } element={ <ModularPage useCustomFetch={ useCustomFetchSchemas } pageContentType='Schemas' /> } />
+          <Route path={ appPagesRouting.AuthorsPage } element={ <ModularPage useCustomFetch={ useCustomFetchAuthors } pageContentType='Authors' /> } />
           <Route path={ appPagesRouting.AppLayouPage } element={ <AppLayout/> } />
           <Route path={ appPagesRouting.AuthorsPage } element={ <Authors /> } />
           <Route path={ appPagesRouting.AuthorsDetailPage } element={ <AuthorsDetailPage/> } ></Route>
@@ -26,7 +26,6 @@ const App: React.FC = () => {
           <Route path={ appPagesRouting.CategoriesPage } element={ <Categories /> } />
           <Route path={ appPagesRouting.NationalitiesPage } element={ <Nationalities /> } />
           <Route path={ appPagesRouting.StyleComponentsPage } element={ <StyleComponents /> } />
-          <Route path='modular-page/' element={ <ModularPage useCustomFetch={ useCustomFetchSchemas } /> } />
         </Routes>
       </BrowserRouter>
     </div>

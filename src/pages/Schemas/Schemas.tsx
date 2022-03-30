@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useCustomFetchSchemas } from '../../backend/apiCalls';
 import { SchemasType } from '../../helpers/types';
-import { isDataFetchedValid } from '../../helpers/validators';
+import { isDataFetchedValid } from '../../helpers/generalHelpers';
 import { SchemasStyle, TableTitle, TitleContainer } from './Schemas.style';
 
 const Schemas: React.FC = () => {

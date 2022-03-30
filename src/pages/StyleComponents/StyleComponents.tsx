@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useCustomFetchStyleComponents } from '../../backend/apiCalls';
 import { StyleComponentsType } from '../../helpers/types';
-import { isDataFetchedValid } from '../../helpers/validators';
+import { isDataFetchedValid } from '../../helpers/generalHelpers';
 
 const StyleComponents: React.FC = () => {
     const [styleComponents, setStyleComponents] = useState<StyleComponentsType[]>([]);

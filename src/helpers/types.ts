@@ -1,6 +1,6 @@
 export type SchemasType = {
     _id: string;
-    name: string;
+    name?: string;
     route: string;
 };
 
@@ -60,4 +60,13 @@ export type FetchResponseType = {
 
 export type ModularPageType = {
     useCustomFetch: () => FetchResponseType;
+    pageContentType: string;
+}
+
+export type ModularContentType = {
+    pageContentType: string;
+}
+
+export type AssetType = {
+    asset: GeneralBackendType;
 }

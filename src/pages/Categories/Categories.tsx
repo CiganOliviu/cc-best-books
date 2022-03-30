@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useCustomFetchCategories } from '../../backend/apiCalls';
 import { CategoriesType } from '../../helpers/types';
-import { isDataFetchedValid } from '../../helpers/validators';
+import { isDataFetchedValid } from '../../helpers/generalHelpers';
 
 const Categories: React.FC = () => {
     const [categories, setCategories] = useState<CategoriesType[]>([]);

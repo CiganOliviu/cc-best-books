@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useCustomFetchAuthors } from '../../backend/apiCalls';
 import { AuthorsType } from '../../helpers/types';
-import { isDataFetchedValid } from '../../helpers/validators';
+import { isDataFetchedValid } from '../../helpers/generalHelpers';
 import { TableTitle } from '../Schemas/Schemas.style';
 import { useNavigate } from 'react-router-dom';
 
