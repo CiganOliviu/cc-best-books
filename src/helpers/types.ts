@@ -68,10 +68,6 @@ export type ModularDetailPage = {
     pageContentType: string;
 }
 
-export type ModularContentType = {
-    pageContentType: string;
-}
-
 export type AssetType = {
     asset: GeneralBackendType;
 }
