@@ -63,6 +63,11 @@ export type ModularPageType = {
     pageContentType: string;
 }
 
+export type ModularDetailPage = {
+    useCustomFetch: (id: string | undefined) => FetchResponseType;
+    pageContentType: string;
+}
+
 export type ModularContentType = {
     pageContentType: string;
 }

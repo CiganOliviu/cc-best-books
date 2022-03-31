@@ -8,6 +8,13 @@ export const isDataFetchedValid = (apiData: GeneralBackendType[]): boolean => {
     return false;
 };
 
+export const isJsonObjectValid = (apiData: GeneralBackendType): boolean => {
+    if (apiData === null || apiData === undefined) {
+        return true;
+    }
+
+    return false;
+}
 
 export const getNationality = (nationalities: NationalitiesType[], authorId?: string): string => {
 

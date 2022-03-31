@@ -1,10 +1,12 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { GlobalStyles } from './App.style';
 import { appPagesRouting } from './helpers/appPagesRouting';
-import AuthorsDetailPage from './pages/Authors/AuthorsDetalPage';
 import ModularPage from './pages/ModularPage/ModularPage';
-import { useCustomFetchAppLayout, useCustomFetchAuthors, useCustomFetchBooks, useCustomFetchCategories, useCustomFetchNationalities, useCustomFetchSchemas, useCustomFetchStyleComponents } from './backend/apiCalls';
+import { useCustomFetchAppLayout, useCustomFetchAuthors, useCustomFetchBooks, useCustomFetchCategories, 
+  useCustomFetchNationalities, useCustomFetchSchemas, useCustomFetchStyleComponents,
+  useCustomFetchAuthor } from './backend/apiCalls';
 import { pageContentTypes } from './helpers/pageContentTypes';
+import ModularDetailPage from './pages/ModularDetailPage/ModularDetailPage';
 
 const App: React.FC = () => {
   return (
@@ -19,7 +21,7 @@ const App: React.FC = () => {
           <Route path={ appPagesRouting.BooksPage } element={ <ModularPage useCustomFetch={ useCustomFetchBooks } pageContentType={ pageContentTypes.Books } /> } />
           <Route path={ appPagesRouting.CategoriesPage } element={ <ModularPage useCustomFetch={ useCustomFetchCategories } pageContentType={ pageContentTypes.Categories } /> } />
           <Route path={ appPagesRouting.StyleComponentsPage } element={ <ModularPage useCustomFetch={ useCustomFetchStyleComponents } pageContentType={ pageContentTypes.StyleComponents } /> } />
-          <Route path={ appPagesRouting.AuthorsDetailPage } element={ <AuthorsDetailPage/> } ></Route>
+          <Route path={ appPagesRouting.AuthorsDetailPage } element={ <ModularDetailPage useCustomFetch={ useCustomFetchAuthor } pageContentType={ pageContentTypes.Authors } /> } />
         </Routes>
       </BrowserRouter>
     </div>
