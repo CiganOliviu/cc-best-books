@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { GeneralBackendType, ModularDetailPage } from '../../helpers/types';
 import { useParams } from 'react-router-dom';
 import { pageContentTypes } from '../../helpers/pageContentTypes';
-import SchemasContent from '../../components/SchemasContent/SchemasContent';
 import AuthorsDetailPageContent from '../../components/AuthorsContent/AuthorsDetailPageContent';
-import NationalitiesContent from '../../components/NationalitiesContent/NationalitiesContent';
-import AppLayoutContent from '../../components/AppLayoutContent/AppLayoutContent';
-import BooksContent from '../../components/BooksContent/BooksContent';
-import CategoriesContent from '../../components/CategoriesContent/CategoriesContent';
-import StyleComponentsContent from '../../components/StyleComponentsContent/StyleComponentsContent';
 import { isJsonObjectValid } from '../../helpers/generalHelpers';
+import SchemasDetailPageContent from '../../components/SchemasContent/SchemasDetailPageContent';
+import NationalitiesDetailPageContent from '../../components/NationalitiesContent/NationalitiesDetailPageContent';
+import AppLayoutDetailPageContent from '../../components/AppLayoutContent/AppLayoutDetailPageContent';
+import BooksDetailPageContent from '../../components/BooksContent/BooksDetailPageContent';
+import CategoriesDetailPageContent from '../../components/CategoriesContent/CategoriesDetailPageContent';
+import StyleComponentsDetailPageContent from '../../components/StyleComponentsContent/StyleComponentsDetailPageContent';
 
 const ModularPage: React.FC<ModularDetailPage> = ({ useCustomFetch, pageContentType }) => {
     const [modularPageData, setModularPageData] = useState<GeneralBackendType>();
@@ -37,13 +37,13 @@ const ModularPage: React.FC<ModularDetailPage> = ({ useCustomFetch, pageContentT
     };  
     
     const getContentByPageContentType = (data: GeneralBackendType) => {
-        return pageContentType === pageContentTypes.Schemas ? <SchemasContent asset={data} /> : 
-               pageContentType === pageContentTypes.Authors ? <AuthorsDetailPageContent asset={data}></AuthorsDetailPageContent> :
-               pageContentType === pageContentTypes.Nationalities ? <NationalitiesContent asset={data}></NationalitiesContent> :
-               pageContentType === pageContentTypes.AppLayout ? <AppLayoutContent asset={data}></AppLayoutContent> :
-               pageContentType === pageContentTypes.Books ? <BooksContent asset={data}></BooksContent> :
-               pageContentType === pageContentTypes.Categories ? <CategoriesContent asset={data}></CategoriesContent> :
-               pageContentType === pageContentTypes.StyleComponents ? <StyleComponentsContent asset={data}></StyleComponentsContent> :
+        return pageContentType === pageContentTypes.Schemas ? <SchemasDetailPageContent asset={data} /> : 
+               pageContentType === pageContentTypes.Authors ? <AuthorsDetailPageContent asset={data} /> :
+               pageContentType === pageContentTypes.Nationalities ? <NationalitiesDetailPageContent asset={data} /> :
+               pageContentType === pageContentTypes.AppLayout ? <AppLayoutDetailPageContent asset={data} /> :
+               pageContentType === pageContentTypes.Books ? <BooksDetailPageContent asset={data} /> :
+               pageContentType === pageContentTypes.Categories ? <CategoriesDetailPageContent asset={data} /> :
+               pageContentType === pageContentTypes.StyleComponents ? <StyleComponentsDetailPageContent asset={data} /> :
                <></> 
     };
 
