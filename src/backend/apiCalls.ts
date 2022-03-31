@@ -21,6 +21,16 @@ export const useCustomFetchCategories = () => {
     return { isLoading, serverError, apiData };
 };
 
+export const useCustomFetchCategory = (id: string | undefined) => {
+    const {
+        serverError,
+        apiData,
+        isLoading,
+    } = useCustomFetch(`${requestUrls.fetchCategories}${id}`);
+
+    return { isLoading, serverError, apiData };
+}; 
+
 export const useCustomFetchAuthors = () => {
     const {
         serverError,
@@ -51,6 +61,16 @@ export const useCustomFetchBooks = () => {
     return { isLoading, serverError, apiData };
 };
 
+export const useCustomFetchBook = (id: string | undefined) => {
+    const {
+        serverError, 
+        apiData, 
+        isLoading,
+    } = useCustomFetch(`${requestUrls.fetchBooks}${id}`);
+
+    return { isLoading, serverError, apiData };
+};
+
 export const useCustomFetchNationalities = () => {
     const {
         serverError,
@@ -59,6 +79,16 @@ export const useCustomFetchNationalities = () => {
     } = useCustomFetch(requestUrls.fetchNationalities);
 
     return { serverError, apiData, isLoading };
+};
+
+export const useCustomFetchNationality = (id: string | undefined) => {
+    const {
+        serverError,
+        apiData, 
+        isLoading,
+    } = useCustomFetch(`${requestUrls.fetchNationalities}${id}`);
+
+    return { isLoading, serverError, apiData };
 };
 
 export const useCustomFetchStyleComponents = () => {
@@ -71,6 +101,16 @@ export const useCustomFetchStyleComponents = () => {
     return { serverError, apiData, isLoading };
 };
 
+export const useCustomFetchStyleComponent = (id: string | undefined) => {
+    const {
+        serverError, 
+        apiData,
+        isLoading,
+    } = useCustomFetch(`${requestUrls.fetchCategories}${id}`);
+
+    return { serverError, apiData, isLoading };
+}
+
 export const useCustomFetchAppLayout = () => {
     const {
         serverError,
@@ -80,3 +120,13 @@ export const useCustomFetchAppLayout = () => {
 
     return { isLoading, serverError, apiData };
 };
+
+export const useCustomFetchAppLayoutElement = (id: string | undefined ) => {
+    const {
+        serverError,
+        apiData,
+        isLoading,
+    } = useCustomFetch(`${requestUrls.fetchAppLayout}${id}`);
+
+    return { isLoading, serverError, apiData };
+}
