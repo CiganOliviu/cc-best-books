@@ -1,19 +1,11 @@
 import { GeneralBackendType, NationalitiesType } from "./types";
 
 export const isDataFetchedValid = (apiData: GeneralBackendType[]): boolean => {
-    if (Object.keys(apiData).length === 0) {
-        return true;
-    };
-
-    return false;
+    return Object.keys(apiData).length === 0;
 };
 
 export const isJsonObjectValid = (apiData: GeneralBackendType): boolean => {
-    if (apiData === null || apiData === undefined) {
-        return true;
-    }
-
-    return false;
+    return apiData === null || apiData === undefined;
 }
 
 export const getNationality = (nationalities: NationalitiesType[], authorId?: string): string => {

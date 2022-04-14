@@ -13,7 +13,7 @@ import { pageContentTypes } from '../../helpers/pageContentTypes';
 const ModularPage: React.FC<ModularPageType> = ({ useCustomFetch, pageContentType }) => {
     const [modularPageData, setModularPageData] = useState<GeneralBackendType[]>([]);
     const { apiData, serverError } = useCustomFetch();
-    
+
     useEffect(() => {
         if (apiData) {
             setModularPageData(apiData);
@@ -32,17 +32,17 @@ const ModularPage: React.FC<ModularPageType> = ({ useCustomFetch, pageContentTyp
                 There isn't any data to show
             </div>
         );
-    };  
+    }
 
     const getContentByPageContentType = (data: GeneralBackendType) => {
-        return pageContentType === pageContentTypes.Schemas ? <SchemasContent asset={data} /> : 
-               pageContentType === pageContentTypes.Authors ? <AuthorsContent asset={data}></AuthorsContent> :
-               pageContentType === pageContentTypes.Nationalities ? <NationalitiesContent asset={data}></NationalitiesContent> :
-               pageContentType === pageContentTypes.AppLayout ? <AppLayoutContent asset={data}></AppLayoutContent> :
-               pageContentType === pageContentTypes.Books ? <BooksContent asset={data}></BooksContent> :
-               pageContentType === pageContentTypes.Categories ? <CategoriesContent asset={data}></CategoriesContent> :
-               pageContentType === pageContentTypes.StyleComponents ? <StyleComponentsContent asset={data}></StyleComponentsContent> :
-               <></> 
+        return pageContentType === pageContentTypes.Schemas ? <SchemasContent asset={data}/> :
+               pageContentType === pageContentTypes.Authors ? <AuthorsContent asset={data}/> :
+               pageContentType === pageContentTypes.Nationalities ? <NationalitiesContent asset={data}/> :
+               pageContentType === pageContentTypes.AppLayout ? <AppLayoutContent asset={data}/> :
+               pageContentType === pageContentTypes.Books ? <BooksContent asset={data}/> :
+               pageContentType === pageContentTypes.Categories ? <CategoriesContent asset={data}/> :
+               pageContentType === pageContentTypes.StyleComponents ? <StyleComponentsContent asset={data}/> :
+               <></>
     };
 
     return (

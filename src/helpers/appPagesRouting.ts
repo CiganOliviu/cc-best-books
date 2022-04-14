@@ -1,6 +1,6 @@
-export const appPagesRouting = { 
+export const appPagesRouting = {
     SchemasPage: '/',
-    AppLayouPage: 'app_layout/',
+    AppLayoutPage: 'app_layout/',
     AppLayoutDetailPage: 'app_layout/:id',
     AuthorsPage: 'authors/',
     AuthorsDetailPage: 'authors/:id',

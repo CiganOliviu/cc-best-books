@@ -27,24 +27,24 @@ const ModularPage: React.FC<ModularDetailPage> = ({ useCustomFetch, pageContentT
             throw new Error("Error when fetching data from backend!");
         }
     }, [serverError]);
-    
+
     if (isJsonObjectValid(modularPageData!)) {
         return (
             <div>
                 There isn't any data to show
             </div>
         );
-    };  
-    
+    }
+
     const getContentByPageContentType = (data: GeneralBackendType) => {
-        return pageContentType === pageContentTypes.Schemas ? <SchemasDetailPageContent asset={data} /> : 
+        return pageContentType === pageContentTypes.Schemas ? <SchemasDetailPageContent asset={data} /> :
                pageContentType === pageContentTypes.Authors ? <AuthorsDetailPageContent asset={data} /> :
                pageContentType === pageContentTypes.Nationalities ? <NationalitiesDetailPageContent asset={data} /> :
                pageContentType === pageContentTypes.AppLayout ? <AppLayoutDetailPageContent asset={data} /> :
                pageContentType === pageContentTypes.Books ? <BooksDetailPageContent asset={data} /> :
                pageContentType === pageContentTypes.Categories ? <CategoriesDetailPageContent asset={data} /> :
                pageContentType === pageContentTypes.StyleComponents ? <StyleComponentsDetailPageContent asset={data} /> :
-               <></> 
+               <></>
     };
 
     return getContentByPageContentType(modularPageData!);
