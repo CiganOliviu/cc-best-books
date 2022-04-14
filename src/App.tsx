@@ -2,17 +2,11 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { GlobalStyles } from './App.style';
 import { appPagesRouting } from './helpers/appPagesRouting';
 import ModularPage from './pages/ModularPage/ModularPage';
-import { useCustomFetchAppLayout, useCustomFetchAuthors, useCustomFetchBooks, useCustomFetchCategories,
-  useCustomFetchNationalities, useCustomFetchSchemas, useCustomFetchStyleComponents,
-  useCustomFetchAuthor,
-  useCustomFetchNationality,
-  useCustomFetchAppLayoutElement,
-  useCustomFetchBook,
-  useCustomFetchCategory,
-  useCustomFetchStyleComponent} from './backend/apiCalls';
+import { useCustomFetchData, useCustomFetchDetailData } from './backend/apiCalls';
 import { pageContentTypes } from './helpers/pageContentTypes';
 import ModularDetailPage from './pages/ModularDetailPage/ModularDetailPage';
 import React from 'react';
+import { requestUrls } from './backend/requestUrls';
 
 const App: React.FC = () => {
   return (
@@ -21,44 +15,57 @@ const App: React.FC = () => {
       <BrowserRouter>
         <Routes>
           <Route path={ appPagesRouting.SchemasPage }
-                 element={ <ModularPage useCustomFetch={ useCustomFetchSchemas }
-                                        pageContentType={ pageContentTypes.Schemas } /> } />
+                 element={ <ModularPage useCustomFetch={ useCustomFetchData }
+                                        pageContentType={ pageContentTypes.Schemas }
+                                        requestUrl={ requestUrls.fetchSchemas }/> } />
           <Route path={ appPagesRouting.AuthorsPage }
-                 element={ <ModularPage useCustomFetch={ useCustomFetchAuthors }
-                                        pageContentType={ pageContentTypes.Authors} /> } />
+                 element={ <ModularPage useCustomFetch={ useCustomFetchData }
+                                        pageContentType={ pageContentTypes.Authors}
+                                        requestUrl={ requestUrls.fetchAuthors }/> } />
           <Route path={ appPagesRouting.NationalitiesPage }
-                 element={ <ModularPage useCustomFetch={ useCustomFetchNationalities }
-                                        pageContentType={ pageContentTypes.Nationalities } /> } />
+                 element={ <ModularPage useCustomFetch={ useCustomFetchData }
+                                        pageContentType={ pageContentTypes.Nationalities }
+                                        requestUrl={ requestUrls.fetchNationalities }/> } />
           <Route path={ appPagesRouting.AppLayoutPage }
-                 element={ <ModularPage useCustomFetch={ useCustomFetchAppLayout }
-                                        pageContentType={ pageContentTypes.AppLayout } /> } />
+                 element={ <ModularPage useCustomFetch={ useCustomFetchData }
+                                        pageContentType={ pageContentTypes.AppLayout }
+                                        requestUrl={ requestUrls.fetchAppLayout }/> } />
           <Route path={ appPagesRouting.BooksPage }
-                 element={ <ModularPage useCustomFetch={ useCustomFetchBooks }
-                                        pageContentType={ pageContentTypes.Books } /> } />
+                 element={ <ModularPage useCustomFetch={ useCustomFetchData }
+                                        pageContentType={ pageContentTypes.Books }
+                                        requestUrl={ requestUrls.fetchBooks }/> } />
           <Route path={ appPagesRouting.CategoriesPage }
-                 element={ <ModularPage useCustomFetch={ useCustomFetchCategories }
-                                        pageContentType={ pageContentTypes.Categories } /> } />
+                 element={ <ModularPage useCustomFetch={ useCustomFetchData }
+                                        pageContentType={ pageContentTypes.Categories }
+                                        requestUrl={ requestUrls.fetchCategories }/> } />
           <Route path={ appPagesRouting.StyleComponentsPage }
-                 element={ <ModularPage useCustomFetch={ useCustomFetchStyleComponents }
-                                        pageContentType={ pageContentTypes.StyleComponents } /> } />
+                 element={ <ModularPage useCustomFetch={ useCustomFetchData }
+                                        pageContentType={ pageContentTypes.StyleComponents }
+                                        requestUrl={ requestUrls.fetchStyleComponents }/> } />
           <Route path={ appPagesRouting.AuthorsDetailPage }
-                 element={ <ModularDetailPage useCustomFetch={ useCustomFetchAuthor }
-                                        pageContentType={ pageContentTypes.Authors } /> } />
+                 element={ <ModularDetailPage useCustomFetch={ useCustomFetchDetailData }
+                                        pageContentType={ pageContentTypes.Authors }
+                                        requestUrl={ requestUrls.fetchAuthors }/> } />
           <Route path={ appPagesRouting.NationalitiesDetailPage }
-                 element={ <ModularDetailPage useCustomFetch={ useCustomFetchNationality }
-                                        pageContentType={ pageContentTypes.Nationalities } /> } />
+                 element={ <ModularDetailPage useCustomFetch={ useCustomFetchDetailData }
+                                        pageContentType={ pageContentTypes.Nationalities }
+                                        requestUrl={ requestUrls.fetchNationalities }/> } />
           <Route path={ appPagesRouting.AppLayoutDetailPage }
-                 element={ <ModularDetailPage useCustomFetch={ useCustomFetchAppLayoutElement }
-                                        pageContentType={ pageContentTypes.AppLayout } /> } />
+                 element={ <ModularDetailPage useCustomFetch={ useCustomFetchDetailData }
+                                        pageContentType={ pageContentTypes.AppLayout }
+                                        requestUrl={ requestUrls.fetchAppLayout }/> } />
           <Route path={ appPagesRouting.BooksDetailPage }
-                 element={ <ModularDetailPage useCustomFetch={ useCustomFetchBook }
-                                        pageContentType={ pageContentTypes.Books } /> } />
+                 element={ <ModularDetailPage useCustomFetch={ useCustomFetchDetailData }
+                                        pageContentType={ pageContentTypes.Books }
+                                        requestUrl={ requestUrls.fetchBooks }/> } />
           <Route path={ appPagesRouting.CategoriesDetailPage }
-                 element={ <ModularDetailPage useCustomFetch={ useCustomFetchCategory }
-                                        pageContentType={ pageContentTypes.Categories } /> } />
+                 element={ <ModularDetailPage useCustomFetch={ useCustomFetchDetailData }
+                                        pageContentType={ pageContentTypes.Categories }
+                                        requestUrl={ requestUrls.fetchCategories }/> } />
           <Route path={ appPagesRouting.StyleComponentsDetailPage }
-                 element={ <ModularDetailPage useCustomFetch={ useCustomFetchStyleComponent }
-                                        pageContentType={ pageContentTypes.StyleComponents } /> } />
+                 element={ <ModularDetailPage useCustomFetch={ useCustomFetchDetailData }
+                                        pageContentType={ pageContentTypes.StyleComponents }
+                                        requestUrl={ requestUrls.fetchStyleComponents }/> } />
         </Routes>
       </BrowserRouter>
     </div>

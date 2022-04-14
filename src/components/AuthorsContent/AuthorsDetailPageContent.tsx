@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useCustomFetchNationalities } from '../../backend/apiCalls';
+import { useCustomFetchData } from '../../backend/apiCalls';
 import { getNationality } from '../../helpers/generalHelpers';
 import { AssetType, NationalitiesType } from '../../helpers/types';
+import { requestUrls } from '../../backend/requestUrls';
 
 const AuthorsDetailPageContent: React.FC<AssetType> = (asset: any) => {
     const [nationalities, setNationalities] = useState<NationalitiesType[]>([]);
-    const { apiData, serverError } = useCustomFetchNationalities();
+    const { apiData, serverError } = useCustomFetchData(requestUrls.fetchNationalities);
 
     useEffect(() => {
         if (apiData) {
@@ -26,7 +27,7 @@ const AuthorsDetailPageContent: React.FC<AssetType> = (asset: any) => {
             <p>{ asset?.asset?.age }</p>
             <p>{ asset?.asset?.occupation }</p>
             <p>{ getNationality(nationalities, asset?.asset?.nationality) }</p>
-            <p>{ asset?.asset?.website }</p> 
+            <p>{ asset?.asset?.website }</p>
         </div>
     )
 };

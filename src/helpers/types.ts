@@ -50,7 +50,7 @@ export type StyleComponentsType = {
     app_theme: string;
 }
 
-export type GeneralBackendType = SchemasType | AppLayoutType | AuthorsType | BooksType | CategoriesType | NationalitiesType | StyleComponentsType; 
+export type GeneralBackendType = SchemasType | AppLayoutType | AuthorsType | BooksType | CategoriesType | NationalitiesType | StyleComponentsType;
 
 export type FetchResponseType = {
     apiData: null;
@@ -59,13 +59,15 @@ export type FetchResponseType = {
 }
 
 export type ModularPageType = {
-    useCustomFetch: () => FetchResponseType;
+    useCustomFetch: (url: string) => FetchResponseType;
     pageContentType: string;
+    requestUrl: string;
 }
 
 export type ModularDetailPage = {
-    useCustomFetch: (id: string | undefined) => FetchResponseType;
+    useCustomFetch: (id: string | undefined, url: string) => FetchResponseType;
     pageContentType: string;
+    requestUrl: string;
 }
 
 export type AssetType = {

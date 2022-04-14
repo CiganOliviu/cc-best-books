@@ -11,10 +11,10 @@ import BooksDetailPageContent from '../../components/BooksContent/BooksDetailPag
 import CategoriesDetailPageContent from '../../components/CategoriesContent/CategoriesDetailPageContent';
 import StyleComponentsDetailPageContent from '../../components/StyleComponentsContent/StyleComponentsDetailPageContent';
 
-const ModularPage: React.FC<ModularDetailPage> = ({ useCustomFetch, pageContentType }) => {
+const ModularPage: React.FC<ModularDetailPage> = ({ useCustomFetch, pageContentType , requestUrl}) => {
     const [modularPageData, setModularPageData] = useState<GeneralBackendType>();
     const { id } = useParams();
-    const { apiData, serverError } = useCustomFetch(id);
+    const { apiData, serverError } = useCustomFetch(id, requestUrl);
 
     useEffect(() => {
         if (apiData) {

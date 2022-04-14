@@ -10,9 +10,9 @@ import CategoriesContent from '../../components/CategoriesContent/CategoriesCont
 import StyleComponentsContent from '../../components/StyleComponentsContent/StyleComponentsContent';
 import { pageContentTypes } from '../../helpers/pageContentTypes';
 
-const ModularPage: React.FC<ModularPageType> = ({ useCustomFetch, pageContentType }) => {
+const ModularPage: React.FC<ModularPageType> = ({ useCustomFetch, pageContentType, requestUrl }) => {
     const [modularPageData, setModularPageData] = useState<GeneralBackendType[]>([]);
-    const { apiData, serverError } = useCustomFetch();
+    const { apiData, serverError } = useCustomFetch(requestUrl);
 
     useEffect(() => {
         if (apiData) {
