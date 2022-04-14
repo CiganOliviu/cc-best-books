@@ -1,11 +1,10 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { AssetType } from '../../helpers/types';
 import { TableTitle } from '../../App.style';
+import { useNavigate } from 'react-router-dom';
 
 const AuthorsContent: React.FC<AssetType> = (asset: any) => {
-
-    const navigate = useNavigate();
+    const navigate = useNavigate()
     return (
         <div>
             <div key={ asset?.asset?.last_name }>
