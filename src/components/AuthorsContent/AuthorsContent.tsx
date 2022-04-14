@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AssetType } from '../../helpers/types';
-import { TableTitle } from '../SchemasContent/Schemas.style';
+import { TableTitle } from '../../App.style';
 
 const AuthorsContent: React.FC<AssetType> = (asset: any) => {
 
@@ -9,7 +9,9 @@ const AuthorsContent: React.FC<AssetType> = (asset: any) => {
     return (
         <div>
             <div key={ asset?.asset?.last_name }>
-                <TableTitle href={ asset?.asset?._id } onClick={() => navigate(asset?.asset?._id)}>{ asset?.asset?.first_name } { asset?.asset?.last_name }</TableTitle>                      
+                <TableTitle href={ asset?.asset?._id } onClick={() => navigate(asset?.asset?._id)}>
+                    { asset?.asset?.first_name } { asset?.asset?.last_name }
+                </TableTitle>
             </div>
         </div>
     )
