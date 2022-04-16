@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { GeneralBackendType, ModularPageType } from '../../helpers/types';
-import { isDataFetchedValid } from '../../helpers/generalHelpers';
-import SchemasContent from '../../components/SchemasContent/SchemasContent';
-import AuthorsContent from '../../components/AuthorsContent/AuthorsContent';
-import NationalitiesContent from '../../components/NationalitiesContent/NationalitiesContent';
-import AppLayoutContent from '../../components/AppLayoutContent/AppLayoutContent';
-import BooksContent from '../../components/BooksContent/BooksContent';
-import CategoriesContent from '../../components/CategoriesContent/CategoriesContent';
-import StyleComponentsContent from '../../components/StyleComponentsContent/StyleComponentsContent';
-import { pageContentTypes } from '../../helpers/pageContentTypes';
+import { GeneralBackendType, ModularPageType } from '../../../helpers/types';
+import { isDataFetchedValid } from '../../../helpers/generalHelpers';
+import { pageContentTypes } from '../../../helpers/pageContentTypes';
+import SchemasContent from '../../SchemasContent/SchemasContent';
+import AuthorsContent from '../../AuthorsContent/AuthorsContent';
+import NationalitiesContent from '../../NationalitiesContent/NationalitiesContent';
+import AppLayoutContent from '../../AppLayoutContent/AppLayoutContent';
+import BooksContent from '../../BooksContent/BooksContent';
+import CategoriesContent from '../../CategoriesContent/CategoriesContent';
+import StyleComponentsContent from '../../StyleComponentsContent/StyleComponentsContent';
 
 const ModularPage: React.FC<ModularPageType> = ({ useCustomFetch, pageContentType, requestUrl }) => {
     const [modularPageData, setModularPageData] = useState<GeneralBackendType[]>([]);

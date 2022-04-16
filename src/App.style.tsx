@@ -5,7 +5,7 @@ export const GlobalStyles = createGlobalStyle`
     body {
         background: #2C2C2C;
         color: #fff;
-        padding: 2%;
+        padding: 1%;
     }
 `;
 
@@ -22,8 +22,12 @@ export const TableTitle = styled.a`
 export const ContentParagraph = styled.p`
     color: #fff;
     font-size: 18px;
-`
+`;
 
 export const TitleContainer = styled.div`
     padding: 1%;
-`
+`;
+
+export const DetailPageContainer = styled.div`
+    
+`;

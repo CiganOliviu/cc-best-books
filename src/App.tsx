@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { GlobalStyles } from './App.style';
 import { appPagesRouting } from './helpers/appPagesRouting';
-import ModularPage from './pages/ModularPage/ModularPage';
 import { useCustomFetchData, useCustomFetchDetailData } from './backend/apiCalls';
 import { pageContentTypes } from './helpers/pageContentTypes';
-import ModularDetailPage from './pages/ModularDetailPage/ModularDetailPage';
 import React from 'react';
 import { requestUrls } from './backend/requestUrls';
+import ModularPage from './components/pages/ModularPage/ModularPage';
+import ModularDetailPage from './components/pages/ModularDetailPage/ModularDetailPage';
 
 const App: React.FC = () => {
   return (

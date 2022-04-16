@@ -3,6 +3,7 @@ import { useCustomFetchData } from '../../backend/apiCalls';
 import { getNationality } from '../../helpers/generalHelpers';
 import { AssetType, NationalitiesType } from '../../helpers/types';
 import { requestUrls } from '../../backend/requestUrls';
+import { ContentParagraph, DetailPageContainer } from '../../App.style';
 
 const AuthorsDetailPageContent: React.FC<AssetType> = (asset: any) => {
     const [nationalities, setNationalities] = useState<NationalitiesType[]>([]);
@@ -21,14 +22,14 @@ const AuthorsDetailPageContent: React.FC<AssetType> = (asset: any) => {
     }, [serverError])
 
     return (
-        <div>
-            <p>{ asset?.asset?.first_name }</p>
-            <p>{ asset?.asset?.last_name }</p>
-            <p>{ asset?.asset?.age }</p>
-            <p>{ asset?.asset?.occupation }</p>
-            <p>{ getNationality(nationalities, asset?.asset?.nationality) }</p>
-            <p>{ asset?.asset?.website }</p>
-        </div>
+        <DetailPageContainer>
+            <ContentParagraph>{ asset?.asset?.first_name }</ContentParagraph>
+            <ContentParagraph>{ asset?.asset?.last_name }</ContentParagraph>
+            <ContentParagraph>{ asset?.asset?.age }</ContentParagraph>
+            <ContentParagraph>{ asset?.asset?.occupation }</ContentParagraph>
+            <ContentParagraph>{ getNationality(nationalities, asset?.asset?.nationality) }</ContentParagraph>
+            <ContentParagraph>{ asset?.asset?.website }</ContentParagraph>
+        </DetailPageContainer>
     )
 };
 

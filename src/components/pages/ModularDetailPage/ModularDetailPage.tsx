@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { GeneralBackendType, ModularDetailPage } from '../../helpers/types';
+import { GeneralBackendType, ModularDetailPage } from '../../../helpers/types';
 import { useParams } from 'react-router-dom';
-import { pageContentTypes } from '../../helpers/pageContentTypes';
-import AuthorsDetailPageContent from '../../components/AuthorsContent/AuthorsDetailPageContent';
-import { isJsonObjectValid } from '../../helpers/generalHelpers';
-import SchemasDetailPageContent from '../../components/SchemasContent/SchemasDetailPageContent';
-import NationalitiesDetailPageContent from '../../components/NationalitiesContent/NationalitiesDetailPageContent';
-import AppLayoutDetailPageContent from '../../components/AppLayoutContent/AppLayoutDetailPageContent';
-import BooksDetailPageContent from '../../components/BooksContent/BooksDetailPageContent';
-import CategoriesDetailPageContent from '../../components/CategoriesContent/CategoriesDetailPageContent';
-import StyleComponentsDetailPageContent from '../../components/StyleComponentsContent/StyleComponentsDetailPageContent';
+import { isJsonObjectValid } from '../../../helpers/generalHelpers';
+import { pageContentTypes } from '../../../helpers/pageContentTypes';
+import SchemasDetailPageContent from '../../SchemasContent/SchemasDetailPageContent';
+import AuthorsDetailPageContent from '../../AuthorsContent/AuthorsDetailPageContent';
+import NationalitiesDetailPageContent from '../../NationalitiesContent/NationalitiesDetailPageContent';
+import AppLayoutDetailPageContent from '../../AppLayoutContent/AppLayoutDetailPageContent';
+import BooksDetailPageContent from '../../BooksContent/BooksDetailPageContent';
+import CategoriesDetailPageContent from '../../CategoriesContent/CategoriesDetailPageContent';
+import StyleComponentsDetailPageContent from '../../StyleComponentsContent/StyleComponentsDetailPageContent';
 
 const ModularPage: React.FC<ModularDetailPage> = ({ useCustomFetch, pageContentType , requestUrl}) => {
     const [modularPageData, setModularPageData] = useState<GeneralBackendType>();
