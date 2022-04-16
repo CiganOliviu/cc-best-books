@@ -3,7 +3,7 @@ import { useCustomFetchData } from '../../backend/apiCalls';
 import { getNationality } from '../../helpers/generalHelpers';
 import { AssetType, NationalitiesType } from '../../helpers/types';
 import { requestUrls } from '../../backend/requestUrls';
-import { ContentParagraph, DetailPageContainer } from '../../App.style';
+import { ContentParagraph, DetailPageContainer, InputContainer } from '../../App.style';
 
 const AuthorsDetailPageContent: React.FC<AssetType> = (asset: any) => {
     const [nationalities, setNationalities] = useState<NationalitiesType[]>([]);
@@ -20,15 +20,28 @@ const AuthorsDetailPageContent: React.FC<AssetType> = (asset: any) => {
             throw new Error('Unable to fetch nationalities from authors');
         }
     }, [serverError])
-
     return (
         <DetailPageContainer>
-            <ContentParagraph>{ asset?.asset?.first_name }</ContentParagraph>
-            <ContentParagraph>{ asset?.asset?.last_name }</ContentParagraph>
-            <ContentParagraph>{ asset?.asset?.age }</ContentParagraph>
-            <ContentParagraph>{ asset?.asset?.occupation }</ContentParagraph>
-            <ContentParagraph>{ getNationality(nationalities, asset?.asset?.nationality) }</ContentParagraph>
-            <ContentParagraph>{ asset?.asset?.website }</ContentParagraph>
+            <ContentParagraph>Profile picture:</ContentParagraph>
+            <InputContainer type="text" defaultValue={ asset?.asset?.profile_picture } />
+            <div>&nbsp;</div>
+            <ContentParagraph>First name:</ContentParagraph>
+            <InputContainer type="text" defaultValue={ asset?.asset?.first_name } />
+            <div>&nbsp;</div>
+            <ContentParagraph>Last name:</ContentParagraph>
+            <InputContainer type="text" defaultValue={ asset?.asset?.last_name } />
+            <div>&nbsp;</div>
+            <ContentParagraph>Age:</ContentParagraph>
+            <InputContainer type="text" defaultValue={ asset?.asset?.age } />
+            <div>&nbsp;</div>
+            <ContentParagraph>Occupation:</ContentParagraph>
+            <InputContainer type="text" defaultValue={ asset?.asset?.occupation } />
+            <div>&nbsp;</div>
+            <ContentParagraph>Nationality:</ContentParagraph>
+            <InputContainer type="text" defaultValue={ getNationality(nationalities, asset?.asset?.nationality) } />
+            <div>&nbsp;</div>
+            <ContentParagraph>Website:</ContentParagraph>
+            <InputContainer type="text" defaultValue={ asset?.asset?.website } />
         </DetailPageContainer>
     )
 };
