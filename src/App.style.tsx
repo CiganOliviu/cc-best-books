@@ -13,9 +13,11 @@ export const TableTitle = styled.a`
     color: #fff;
     text-decoration: none;
     font-size: 24px;
-    
+    transition: all 250ms ease;
+  
     :hover {
         color: #477AFF;
+        transition: all 250ms ease;
     }
 `;
 

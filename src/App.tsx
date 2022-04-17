@@ -17,7 +17,8 @@ const App: React.FC = () => {
           <Route path={ appPagesRouting.SchemasPage }
                  element={ <ModularPage useCustomFetch={ useCustomFetchData }
                                         pageContentType={ pageContentTypes.Schemas }
-                                        requestUrl={ requestUrls.fetchSchemas }/> } />
+                                        requestUrl={ requestUrls.fetchSchemas }
+                                        isSchemasPage={ true }/> } />
           <Route path={ appPagesRouting.AuthorsPage }
                  element={ <ModularPage useCustomFetch={ useCustomFetchData }
                                         pageContentType={ pageContentTypes.Authors}

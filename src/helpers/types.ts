@@ -62,6 +62,7 @@ export type ModularPageType = {
     useCustomFetch: (url: string) => FetchResponseType;
     pageContentType: string;
     requestUrl: string;
+    isSchemasPage?: boolean;
 }
 
 export type ModularDetailPage = {

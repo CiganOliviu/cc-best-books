@@ -11,7 +11,7 @@ import CategoriesContent from '../../CategoriesContent/CategoriesContent';
 import StyleComponentsContent from '../../StyleComponentsContent/StyleComponentsContent';
 import { ButtonsContainer, CustomButton, PageContainer } from '../../../App.style';
 
-const ModularPage: React.FC<ModularPageType> = ({ useCustomFetch, pageContentType, requestUrl }) => {
+const ModularPage: React.FC<ModularPageType> = ({ useCustomFetch, pageContentType, requestUrl, isSchemasPage }) => {
     const [modularPageData, setModularPageData] = useState<GeneralBackendType[]>([]);
     const { apiData, serverError } = useCustomFetch(requestUrl);
 
@@ -53,10 +53,12 @@ const ModularPage: React.FC<ModularPageType> = ({ useCustomFetch, pageContentTyp
                 return getContentByPageContentType(data);
             })
         }
-        <ButtonsContainer>
-            <CustomButton isAlertButton={false}>Update set of data</CustomButton>
-            <CustomButton isAlertButton={true}>Delete set of data</CustomButton>
-        </ButtonsContainer>
+        {
+            !isSchemasPage &&
+            <ButtonsContainer>
+                <CustomButton isAlertButton={ false }>Add new entry</CustomButton>
+            </ButtonsContainer>
+        }
         </PageContainer>
     )
 }
