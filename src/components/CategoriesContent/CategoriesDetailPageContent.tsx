@@ -1,14 +1,21 @@
 import React from 'react';
 import { AssetType } from '../../helpers/types';
-import { ContentParagraph } from '../../App.style';
+import { ButtonsContainer, ContentParagraph, CustomButton, DetailPageContainer, InputContainer } from '../../App.style';
 
 const CategoriesDetailPageContent: React.FC<AssetType> = (asset: any) => {
 
     return (
-        <div>
-            <ContentParagraph>id: { asset?.asset?._id }</ContentParagraph>
-            <ContentParagraph>name: { asset?.asset?.name }</ContentParagraph>
-        </div>
+        <DetailPageContainer>
+            <form>
+                <ContentParagraph>Profile picture:</ContentParagraph>
+                <InputContainer type="text" defaultValue={ asset?.asset?.name } />
+                <div>&nbsp;</div>
+                <ButtonsContainer>
+                    <CustomButton isAlertButton={false}>Update set of data</CustomButton>
+                    <CustomButton isAlertButton={true}>Delete set of data</CustomButton>
+                </ButtonsContainer>
+            </form>
+        </DetailPageContainer>
     )
 };
 
