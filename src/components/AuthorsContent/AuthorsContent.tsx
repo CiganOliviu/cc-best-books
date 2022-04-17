@@ -7,7 +7,7 @@ const AuthorsContent: React.FC<AssetType> = (asset: any) => {
     const navigate = useNavigate()
     return (
         <PageContainer>
-            <div key={ asset?.asset?.last_name }>
+            <div key={ asset?.asset?._id }>
                 <TableTitle href={ asset?.asset?._id } onClick={() => navigate(asset?.asset?._id)}>
                     { asset?.asset?.first_name } { asset?.asset?.last_name }
                 </TableTitle>

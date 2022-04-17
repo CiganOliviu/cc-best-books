@@ -20,6 +20,7 @@ const AuthorsDetailPageContent: React.FC<AssetType> = (asset: any) => {
             throw new Error('Unable to fetch nationalities from authors');
         }
     }, [serverError])
+
     return (
         <DetailPageContainer>
             <form>
