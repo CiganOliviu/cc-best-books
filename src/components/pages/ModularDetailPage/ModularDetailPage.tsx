@@ -10,6 +10,7 @@ import AppLayoutDetailPageContent from '../../AppLayoutContent/AppLayoutDetailPa
 import BooksDetailPageContent from '../../BooksContent/BooksDetailPageContent';
 import CategoriesDetailPageContent from '../../CategoriesContent/CategoriesDetailPageContent';
 import StyleComponentsDetailPageContent from '../../StyleComponentsContent/StyleComponentsDetailPageContent';
+import { DetailPageContainer } from '../../../App.style';
 
 const ModularPage: React.FC<ModularDetailPage> = ({ useCustomFetch, pageContentType , requestUrl}) => {
     const [modularPageData, setModularPageData] = useState<GeneralBackendType>();
@@ -47,7 +48,11 @@ const ModularPage: React.FC<ModularDetailPage> = ({ useCustomFetch, pageContentT
                <></>
     };
 
-    return getContentByPageContentType(modularPageData!);
+    return (
+        <DetailPageContainer>
+            { getContentByPageContentType(modularPageData!) }
+        </DetailPageContainer>
+    )
 }
 
 export default ModularPage;
