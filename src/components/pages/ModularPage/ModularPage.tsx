@@ -9,6 +9,7 @@ import AppLayoutContent from '../../AppLayoutContent/AppLayoutContent';
 import BooksContent from '../../BooksContent/BooksContent';
 import CategoriesContent from '../../CategoriesContent/CategoriesContent';
 import StyleComponentsContent from '../../StyleComponentsContent/StyleComponentsContent';
+import { ButtonsContainer, CustomButton, PageContainer } from '../../../App.style';
 
 const ModularPage: React.FC<ModularPageType> = ({ useCustomFetch, pageContentType, requestUrl }) => {
     const [modularPageData, setModularPageData] = useState<GeneralBackendType[]>([]);
@@ -46,13 +47,17 @@ const ModularPage: React.FC<ModularPageType> = ({ useCustomFetch, pageContentTyp
     };
 
     return (
-        <div>
+        <PageContainer>
         {
             modularPageData.map((data: GeneralBackendType) => {
                 return getContentByPageContentType(data);
             })
         }
-        </div>
+        <ButtonsContainer>
+            <CustomButton isAlertButton={false}>Update set of data</CustomButton>
+            <CustomButton isAlertButton={true}>Delete set of data</CustomButton>
+        </ButtonsContainer>
+        </PageContainer>
     )
 }
 

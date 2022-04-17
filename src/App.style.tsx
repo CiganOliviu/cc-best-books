@@ -54,7 +54,7 @@ export const ButtonsContainer = styled.div`
 export const CustomButton = styled.button<{ isAlertButton: boolean }>`
     background: ${props => props.isAlertButton ? '#e60000' : '#477AFF'};
     color: #fff;
-    padding: 1%;
+    padding: 0.8%;
     margin-left: 1%;
     font-size: 20px;
     border: none;
@@ -68,4 +68,8 @@ export const CustomButton = styled.button<{ isAlertButton: boolean }>`
 
 export const DetailPageContainer = styled.div`
     padding: 2%;
+`;
+
+export const PageContainer = styled.div`
+    padding: 1%;
 `;

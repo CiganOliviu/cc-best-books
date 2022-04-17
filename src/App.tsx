@@ -5,8 +5,8 @@ import { useCustomFetchData, useCustomFetchDetailData } from './backend/apiCalls
 import { pageContentTypes } from './helpers/pageContentTypes';
 import React from 'react';
 import { requestUrls } from './backend/requestUrls';
-import ModularPage from './components/pages/ModularPage/ModularPage';
-import ModularDetailPage from './components/pages/ModularDetailPage/ModularDetailPage';
+import ModularPage from './components/Pages/ModularPage/ModularPage';
+import ModularDetailPage from './components/Pages/ModularDetailPage/ModularDetailPage';
 
 const App: React.FC = () => {
   return (
